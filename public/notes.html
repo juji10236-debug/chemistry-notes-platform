@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chemistry Grade 11 - Unit 6 Full Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Arial&display=swap" rel="stylesheet">
+<style>
+:root{
+    --bg:#f4f7ff;
+    --card:#ffffff;
+    --text:#1f2937;
+    --primary:#4f46e5;
+    --secondary:#22c55e;
+    --accent:#06b6d4;
+    --warn:#f59e0b;
+    --shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+body.dark{
+    --bg:#0b1220;
+    --card:#1e293b;
+    --text:#e5e7eb;
+    --primary:#818cf8;
+    --secondary:#34d399;
+    --accent:#22d3ee;
+    --warn:#fbbf24;
+    --shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+*{
+    box-sizing:border-box;
+    transition:background 0.3s ease, color 0.3s ease;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+}
+
+h1,h2,h3,h4,p,li,td,th,span{
+    color:inherit;
+}
+
+header{
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+    box-shadow:var(--shadow);
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:30px auto;
+    background:var(--card);
+    padding:30px;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+}
+
+h2{
+    color:var(--primary);
+    border-left:8px solid var(--secondary);
+    padding-left:12px;
+    margin-top:40px;
+    font-size:22px;
+}
+
+h3{
+    font-family: 'Cinzel', serif;
+    color:#0a2243d2;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin:20px 0 10px;
+    padding:8px 12px;
+    -webkit-text-stroke:0.8px #5cc7f4;
+    text-shadow:0 0 3px rgba(56,189,248,0.25), 0 0 6px rgba(34,211,238,0.2), 1px 1px 0 rgba(0,0,0,0.25);
+    transition:0.25s ease;
+}
+
+h3:hover{
+    text-shadow:0 0 5px rgba(56,189,248,0.45), 0 0 10px rgba(34,211,238,0.35), 1px 1px 0 rgba(0,0,0,0.25);
+    transform:translateX(2px);
+}
+
+body.dark h3{
+    color:#f1f5f9;
+    -webkit-text-stroke:0.8px #22d3ee;
+    text-shadow:0 0 4px rgba(34,211,238,0.35), 0 0 8px rgba(34,211,238,0.25), 1px 1px 0 rgba(0,0,0,0.4);
+}
+
+.definition{
+    background:linear-gradient(135deg,#ecfeff,#f0fdf4);
+    border-left:6px solid var(--accent);
+    padding:15px;
+    margin:15px 0;
+    border-radius:10px;
+}
+
+body.dark .definition{
+    background:#0f172a;
+}
+
+.box{
+    background:linear-gradient(135deg,#eef2ff,#ffffff);
+    border-left:6px solid var(--primary);
+    padding:15px;
+    margin:15px 0;
+    border-radius:10px;
+}
+
+body.dark .box{
+    background:#111827;
+}
+
+.reaction{
+    background:linear-gradient(135deg,#fff7ed,#ffffff);
+    border-left:6px solid var(--warn);
+    padding:15px;
+    font-family:monospace;
+    border-radius:10px;
+    overflow-x:auto;
+}
+
+body.dark .reaction{
+    background:#0f172a;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:15px 0;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    background:var(--card);
+}
+
+th,td{
+    border:1px solid rgba(0,0,0,0.08);
+    padding:12px;
+    color:var(--text);
+}
+
+th{
+    background:linear-gradient(135deg,var(--secondary),var(--accent));
+    color:white;
+    font-weight:bold;
+}
+
+tr:nth-child(even){
+    background:#f9fafb;
+}
+
+body.dark tr:nth-child(even){
+    background:#111827;
+}
+
+tr:hover{
+    background:rgba(99,102,241,0.08);
+}
+
+body.dark th, body.dark td{
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.question{
+    background:linear-gradient(135deg,#f5f3ff,#ffffff);
+    border-left:6px solid #a855f7;
+    padding:14px;
+    margin:12px 0;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+body.dark .question{
+    background:#0f172a;
+}
+
+.answer{
+    color:var(--secondary);
+    font-weight:bold;
+}
+
+footer{
+    background:linear-gradient(135deg,var(--primary),#111827);
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+}
+
+.toggle-btn{
+    margin-top:15px;
+    padding:10px 15px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:white;
+    color:#111;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    transition:0.3s ease;
+}
+
+body.dark .toggle-btn{
+    background:#334155;
+    color:white;
+}
+
+.toggle-btn:hover{
+    transform:scale(1.05);
+}
+
+.definition:hover, .box:hover, .question:hover, .reaction:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+@media(max-width:768px){
+    .container{
+        margin:15px;
+        padding:18px;
+    }
+    header{
+        padding:30px 15px;
+    }
+    h2{
+        font-size:18px;
+    }
+}
+
+body.theme-green{
+    --primary:#86efac;
+    --secondary:#bbf7d0;
+    --accent:#67e8f9;
+}
+
+body.theme-purple{
+    --primary:#c4b5fd;
+    --secondary:#ddd6fe;
+    --accent:#a5b4fc;
+}
+
+body.theme-orange{
+    --primary:#fdba74;
+    --secondary:#fed7aa;
+    --accent:#fde68a;
+}
+
+.diagram-box{
+    background:linear-gradient(135deg,#eef2ff,#ffffff);
+    border-left:6px solid var(--accent);
+    padding:12px;
+    margin:15px 0;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    transition:all 0.3s ease;
+}
+
+.diagram-box:hover{
+    transform:translateY(-2px);
+}
+
+.diagram-content{
+    display:none;
+    margin-top:10px;
+    animation:fadeIn 0.4s ease;
+}
+
+.diagram-box.active .diagram-content{
+    display:block;
+}
+
+.diagram-title{
+    font-weight:bold;
+    color:var(--primary);
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:scale(0.98)}
+    to{opacity:1;transform:scale(1)}
+}
+
+body.dark .diagram-box{
+    background:#111827;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>CHEMISTRY GRADE 11 - UNIT 6</h1>
+<h3>Alcohols, Ethers, Aldehydes, Ketones, Carboxylic Acids, Esters, Fats and Oils</h3>
+<button class="toggle-btn" onclick="toggleMode()">🌙 / ☀️ Dark Mode</button>
+<button class="toggle-btn" onclick="changeTheme()">🎨 Change Theme</button>
+<button class="toggle-btn" onclick="window.location.href='dashboard.html'">📊 Dashboard</button>
+</header>
+
+<div class="container">
+
+<h2>6.0 Introduction</h2>
+
+<div class="definition">
+Organic compounds containing oxygen are crucial in chemistry. This unit covers six major functional groups: alcohols (–OH), ethers (–O–), aldehydes (–CHO), ketones (–CO–), carboxylic acids (–COOH), and esters (–COOR).
+</div>
+
+<h3>Learning Outcomes</h3>
+<ul>
+<li>✅ Understand structure and nomenclature of oxygen-containing compounds</li>
+<li>✅ Explain physical and chemical properties</li>
+<li>✅ Prepare these compounds in laboratory</li>
+<li>✅ Identify functional groups and their reactions</li>
+<li>✅ Apply knowledge to real-world applications</li>
+</ul>
+
+<hr style="margin:40px 0;">
+
+<h2>6.1 ALCOHOLS</h2>
+
+<div class="definition">
+Alcohols are organic compounds containing one or more hydroxyl functional groups (–OH) attached to a saturated carbon atom.
+</div>
+
+<h3>Classification</h3>
+<ul>
+<li><b>Primary:</b> –OH on carbon with 1 alkyl group</li>
+<li><b>Secondary:</b> –OH on carbon with 2 alkyl groups</li>
+<li><b>Tertiary:</b> –OH on carbon with 3 alkyl groups</li>
+</ul>
+
+<h3>Nomenclature</h3>
+<div class="box">
+<b>IUPAC Rule:</b> Replace "–e" of alkane with "–ol"<br>
+Example: ethane → ethanol (CH₃CH₂OH)
+</div>
+
+<h3>Physical Properties</h3>
+<ul>
+<li>✅ Polar due to –OH group</li>
+<li>✅ Strong hydrogen bonding → high boiling points</li>
+<li>✅ Soluble in water (especially lower alcohols)</li>
+<li>✅ Solubility decreases with chain length</li>
+</ul>
+
+<h3>Preparation</h3>
+
+<div class="reaction">
+1. Hydration of Alkenes (Markovnikov's Rule):
+CH₂=CH₂ + H₂O → CH₃CH₂OH (H₂SO₄ catalyst, heat)
+</div>
+
+<div class="reaction">
+2. Reduction of Aldehydes/Ketones:
+RCHO + 2H → RCH₂OH (Primary alcohol)
+</div>
+
+<div class="reaction">
+3. Hydrolysis of Alkyl Halides:
+R–X + NaOH → R–OH + NaX
+</div>
+
+<h3>Chemical Reactions</h3>
+
+<div class="box">
+<b>A. Oxidation:</b><br>
+• Primary alcohols → aldehydes → carboxylic acids<br>
+• Secondary alcohols → ketones<br>
+• Tertiary alcohols → no oxidation (stable)
+</div>
+
+<div class="box">
+<b>B. Dehydration (C–O bond broken):</b><br>
+R–OH → C=C + H₂O (conc. H₂SO₄, 170°C)
+</div>
+
+<div class="box">
+<b>C. Reaction with Active Metals:</b><br>
+2ROH + 2Na → 2RONa + H₂↑
+</div>
+
+<div class="box">
+<b>D. Esterification:</b><br>
+ROH + R'COOH ⇌ RCOOR' + H₂O (H₂SO₄ catalyst)
+</div>
+
+<h3>Uses</h3>
+<ul>
+<li>Ethanol: Fuel, solvent, antiseptic</li>
+<li>Methanol: Industrial solvent</li>
+<li>Glycerol: Moisturizer, food additive</li>
+</ul>
+
+<hr style="margin:40px 0;">
+
+<h2>6.2 ETHERS</h2>
+
+<div class="definition">
+Ethers are compounds where oxygen is bonded to two alkyl or aryl groups (R–O–R').
+</div>
+
+<h3>Nomenclature</h3>
+<div class="box">
+<b>Common Names:</b> alkyl + alkyl + ether<br>
+Example: CH₃–O–C₂H₅ = ethyl methyl ether<br><br>
+<b>IUPAC Names:</b> alkoxyalkane<br>
+Example: CH₃–O–C₂H₅ = methoxyethane
+</div>
+
+<h3>Physical Properties</h3>
+<ul>
+<li>✅ Weakly polar (no hydrogen bonding between molecules)</li>
+<li>✅ Lower boiling points than alcohols</li>
+<li>✅ Slightly soluble in water</li>
+<li>✅ Good organic solvents</li>
+</ul>
+
+<h3>Preparation</h3>
+
+<div class="reaction">
+1. Dehydration of Alcohols (140°C):
+2ROH → R–O–R + H₂O (conc. H₂SO₄)
+</div>
+
+<div class="reaction">
+2. Williamson Ether Synthesis (SN2):
+R–X + R'O⁻ → R–O–R' + X⁻
+</div>
+
+<h3>Reactions</h3>
+<div class="box">
+<b>A. Cleavage by Strong Acids:</b><br>
+R–O–R' + 2HBr → 2RBr + H₂O (heat)
+</div>
+
+<div class="box">
+<b>B. Combustion:</b><br>
+Ether + O₂ → CO₂ + H₂O
+</div>
+
+<h3>Uses</h3>
+<ul>
+<li>Diethyl ether: Anesthetic, solvent</li>
+<li>Solvents in organic synthesis</li>
+<li>Industrial applications</li>
+</ul>
+
+<hr style="margin:40px 0;">
+
+<h2>6.3 ALDEHYDES & KETONES</h2>
+
+<h3>Aldehydes</h3>
+<div class="definition">
+Aldehydes contain a carbonyl group (C=O) bonded to at least one hydrogen atom at the end of a carbon chain.
+</div>
+
+<div class="box">
+<b>General Formula:</b> R–CHO<br>
+<b>Nomenclature:</b> Replace "–e" with "–al"<br>
+Example: methanal (HCHO), ethanal (CH₃CHO)
+</div>
+
+<h3>Ketones</h3>
+<div class="definition">
+Ketones have the carbonyl group (C=O) between two carbon atoms.
+</div>
+
+<div class="box">
+<b>General Formula:</b> R–CO–R'<br>
+<b>Nomenclature:</b> Replace "–e" with "–one"<br>
+Example: propanone (CH₃COCH₃), butanone (CH₃CH₂COCH₃)
+</div>
+
+<h3>Physical Properties</h3>
+<table>
+<tr>
+<th>Property</th>
+<th>Aldehyde/Ketone</th>
+<th>Reason</th>
+</tr>
+<tr>
+<td>Boiling Point</td>
+<td>Higher than alkanes, lower than alcohols</td>
+<td>Dipole–dipole interactions (no H-bonding)</td>
+</tr>
+<tr>
+<td>Solubility</td>
+<td>Lower members soluble in water</td>
+<td>H-bonding with water through C=O</td>
+</tr>
+<tr>
+<td>Odor</td>
+<td>Sharp (aldehydes), fruity (ketones)</td>
+<td>Volatile polar compounds</td>
+</tr>
+</table>
+
+<h3>Reactions</h3>
+
+<div class="reaction">
+OXIDATION:
+• Aldehydes → Carboxylic acids (KMnO₄, K₂Cr₂O₇)
+• Ketones → No easy oxidation
+</div>
+
+<div class="reaction">
+REDUCTION:
+• Aldehydes → Primary alcohols
+• Ketones → Secondary alcohols
+</div>
+
+<div class="reaction">
+CONDENSATION:
+• With NH₂NH₂ → Hydrazone
+• With NaHSO₃ → Bisulfite addition
+</div>
+
+<hr style="margin:40px 0;">
+
+<h2>6.4 CARBOXYLIC ACIDS</h2>
+
+<div class="definition">
+Carboxylic acids contain the carboxyl group (–COOH), which consists of a carbonyl group (C=O) and a hydroxyl group (–OH) on the same carbon.
+</div>
+
+<div class="box">
+<b>General Formula:</b> R–COOH<br>
+<b>IUPAC Nomenclature:</b> Replace "–e" with "–oic acid"<br>
+Example: methanoic acid (HCOOH), ethanoic acid (CH₃COOH)
+</div>
+
+<h3>Classification</h3>
+<ul>
+<li>Monocarboxylic acids (1 –COOH)</li>
+<li>Dicarboxylic acids (2 –COOH)</li>
+<li>Tricarboxylic acids (3 –COOH)</li>
+</ul>
+
+<h3>Physical Properties</h3>
+<ul>
+<li>✅ Very high boiling points (hydrogen bonding + dimer formation)</li>
+<li>✅ Completely miscible (C₁–C₄ with water)</li>
+<li>✅ Form hydrogen-bonded dimers</li>
+<li>✅ Pungent odor (especially lower homologs)</li>
+</ul>
+
+<h3>Acidic Nature</h3>
+<div class="box">
+RCOOH ⇌ RCOO⁻ + H⁺<br>
+Weak acids (partially ionize in water)<br>
+Strength increases with electron-withdrawing groups
+</div>
+
+<h3>Reactions</h3>
+
+<div class="reaction">
+1. SALT FORMATION:
+2RCOOH + 2Na → 2RCOONa + H₂↑
+RCOOH + NaOH → RCOONa + H₂O
+</div>
+
+<div class="reaction">
+2. ESTERIFICATION:
+RCOOH + R'OH ⇌ RCOOR' + H₂O (H₂SO₄)
+</div>
+
+<div class="reaction">
+3. DECARBOXYLATION:
+RCOOH → RH + CO₂ (strong heat, lime)
+</div>
+
+<div class="reaction">
+4. HALOGENATION:
+RCH₂COOH + X₂ → RCHXCOOH + HX (PCl₃)
+</div>
+
+<h3>Preparation</h3>
+
+<div class="box">
+<b>Oxidation Method (Most Important):</b><br>
+• Primary alcohols + strong oxidant → carboxylic acids<br>
+• Aldehyde + KMnO₄ → carboxylic acids<br>
+• Alkylbenzenes + KMnO₄ (heat) → benzoic acids
+</div>
+
+<h3>Fatty Acids</h3>
+<div class="box">
+<b>Saturated Fatty Acids:</b> No C=C bonds (solid at room temp)<br>
+Example: Stearic acid (18 carbons, 69°C melting point)<br><br>
+<b>Unsaturated Fatty Acids:</b> C=C bonds present (liquid at room temp)<br>
+Example: Oleic acid (1 double bond, 13°C melting point)<br><br>
+<b>Reason:</b> Double bonds create kinks, reducing packing efficiency
+</div>
+
+<hr style="margin:40px 0;">
+
+<h2>6.5 ESTERS</h2>
+
+<div class="definition">
+Esters are compounds formed when the hydrogen of a carboxylic acid is replaced by an alkyl group. They have the general formula R–COO–R'.
+</div>
+
+<h3>Nomenclature</h3>
+<div class="box">
+<b>Common Name:</b> alkyl (from alcohol) + acid name<br>
+Example: CH₃COOCH₃ = methyl acetate<br><br>
+<b>IUPAC Name:</b> alkyl + alkanoate<br>
+Example: CH₃COOCH₃ = methyl ethanoate
+</div>
+
+<h3>Preparation (Esterification)</h3>
+
+<div class="reaction">
+RCOOH + R'OH ⇌ RCOOR' + H₂O<br>
+(conc. H₂SO₄, heat, Fischer esterification)
+</div>
+
+<h3>Physical Properties</h3>
+<ul>
+<li>✅ Pleasant fruity smell</li>
+<li>✅ Lower boiling points than acids/alcohols</li>
+<li>✅ Slightly soluble in water</li>
+<li>✅ Soluble in organic solvents</li>
+</ul>
+
+<h3>Reactions</h3>
+
+<div class="reaction">
+1. ACID-CATALYZED HYDROLYSIS:
+RCOOR' + H₂O ⇌ RCOOH + R'OH (H⁺)
+</div>
+
+<div class="reaction">
+2. ALKALINE HYDROLYSIS (SAPONIFICATION):
+RCOOR' + NaOH → RCOONa + R'OH
+(Produces soap from fat esters)
+</div>
+
+<div class="reaction">
+3. REDUCTION:
+RCOOR' + LiAlH₄ → RCH₂OH + R'OH
+</div>
+
+<h3>Uses</h3>
+<ul>
+<li>Artificial flavoring (fruit smell)</li>
+<li>Perfumes & fragrances</li>
+<li>Polyesters (synthetic fibers)</li>
+<li>Solvents (paint, varnish)</li>
+</ul>
+
+<hr style="margin:40px 0;">
+
+<h2>6.6 FATS & OILS</h2>
+
+<div class="definition">
+Fats and oils are triglycerides (triacylglycerols)—esters of glycerol with three long-chain fatty acids.
+</div>
+
+<h3>Structure</h3>
+<div class="box">
+Glycerol (C₃H₈O₃) + 3 Fatty Acids → Triglyceride<br><br>
+Glycerol has 3 –OH groups that form ester bonds with 3 different fatty acids.
+</div>
+
+<h3>Fats vs Oils</h3>
+<table>
+<tr>
+<th>Property</th>
+<th>Fats</th>
+<th>Oils</th>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>Saturated (no C=C)</td>
+<td>Unsaturated (C=C present)</td>
+</tr>
+<tr>
+<td>State</td>
+<td>Solid at room temp</td>
+<td>Liquid at room temp</td>
+</tr>
+<tr>
+<td>Melting Point</td>
+<td>Higher (69°C+)</td>
+<td>Lower (−5 to 13°C)</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>Butter, lard, animal fats</td>
+<td>Olive, corn, sunflower oils</td>
+</tr>
+</table>
+
+<h3>Hydrogenation (Hardening Oils)</h3>
+
+<div class="reaction">
+Unsaturated oil + H₂ → Saturated fat<br>
+(Ni catalyst, heat, high pressure)<br><br>
+Produces: Margarine, solid cooking fats<br>
+Reason: Converts liquid oils to solid fats
+</div>
+
+<h3>Rancidity</h3>
+<div class="box">
+<b>Definition:</b> Spoilage of fats/oils with unpleasant smell & taste<br><br>
+<b>Causes:</b><br>
+• Hydrolysis of ester bonds (moisture)<br>
+• Oxidation of C=C bonds (air/oxygen)<br>
+• Heat degradation<br><br>
+<b>Prevention:</b><br>
+• Store in airtight containers<br>
+• Keep away from heat & light<br>
+• Use antioxidants (e.g., BHA, BHT)<br>
+• Maintain proper hygiene
+</div>
+
+<h3>Saponification</h3>
+
+<div class="reaction">
+Fat/Oil + NaOH → Glycerol + Soap (sodium carboxylate)<br>
+RCOOR' + NaOH → RCOONa + R'OH<br><br>
+Used in: Soap making, detergent production
+</div>
+
+<h3>Uses</h3>
+<ul>
+<li>Energy source (9 kcal/gram)</li>
+<li>Soap & detergent production</li>
+<li>Cooking oils</li>
+<li>Margarine & butter alternatives</li>
+<li>Cosmetics & skincare</li>
+<li>Industrial lubricants</li>
+</ul>
+
+<hr style="margin:40px 0;">
+
+<h2 id="review">UNIT 6 SUMMARY</h2>
+
+<div class="box">
+✅ <b>Alcohols:</b> –OH group, soluble in water, can be oxidized<br>
+✅ <b>Ethers:</b> –O– linkage, weakly polar, inert solvents<br>
+✅ <b>Aldehydes:</b> Terminal C=O, easily oxidized to acids<br>
+✅ <b>Ketones:</b> Internal C=O, resist oxidation<br>
+✅ <b>Carboxylic Acids:</b> –COOH, weakly acidic, form dimers<br>
+✅ <b>Esters:</b> Fruity smell, formed from acid + alcohol<br>
+✅ <b>Fats/Oils:</b> Triglycerides, saturated (solid) vs unsaturated (liquid)
+</div>
+
+<h2>REVIEW QUESTIONS (1–15)</h2>
+
+<div class="question">
+1. Which alcohol cannot undergo oxidation easily?<br>
+<span class="answer">Tertiary alcohols</span>
+</div>
+
+<div class="question">
+2. Ethers are formed by dehydration of alcohols at what temperature?<br>
+<span class="answer">140°C (with conc. H₂SO₄)</span>
+</div>
+
+<div class="question">
+3. Name the compound CH₃COCH₂CH₃ (IUPAC)?<br>
+<span class="answer">Butanone</span>
+</div>
+
+<div class="question">
+4. Which gives positive Tollens' test?<br>
+<span class="answer">Aldehydes (not ketones)</span>
+</div>
+
+<div class="question">
+5. Carboxylic acids form dimers due to?<br>
+<span class="answer">Hydrogen bonding</span>
+</div>
+
+<div class="question">
+6. Saponification is used to make?<br>
+<span class="answer">Soap (from fats/oils)</span>
+</div>
+
+<div class="question">
+7. Unsaturated oils are converted to fats by?<br>
+<span class="answer">Hydrogenation (adding H₂)</span>
+</div>
+
+<div class="question">
+8. Primary alcohol → ? → ? (on oxidation)<br>
+<span class="answer">Aldehyde → Carboxylic acid</span>
+</div>
+
+<div class="question">
+9. Why is olive oil liquid but butter solid?<br>
+<span class="answer">Olive oil is unsaturated (C=C bonds cause kinks)</span>
+</div>
+
+<div class="question">
+10. Esterification requires catalyst?<br>
+<span class="answer">Concentrated H₂SO₄</span>
+</div>
+
+<div class="question">
+11. Which compound has the highest boiling point (same MW)?<br>
+<span class="answer">Carboxylic acid (hydrogen bonding + dimer)</span>
+</div>
+
+<div class="question">
+12. Ethers do NOT react with?<br>
+<span class="answer">KMnO₄, strong bases (very inert)</span>
+</div>
+
+<div class="question">
+13. HCOOH is called (common name)?<br>
+<span class="answer">Formic acid</span>
+</div>
+
+<div class="question">
+14. C₆H₅COOH is?<br>
+<span class="answer">Benzoic acid (aromatic carboxylic acid)</span>
+</div>
+
+<div class="question">
+15. Rancidity is prevented by?<br>
+<span class="answer">Airtight storage, keeping away from heat/light, using antioxidants</span>
+</div>
+
+</div>
+
+<footer>
+🧪 CHEMISTRY GRADE 11 - UNIT 6 COMPLETE NOTES 🧪<br>
+✅ All sections covered | 15+ Review questions | Interactive content
+</footer>
+
+<script>
+let themes = ["theme-default", "theme-green", "theme-purple", "theme-orange"];
+let current = 0;
+
+function toggleMode(){
+    document.body.classList.toggle("dark");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+}
+
+function changeTheme(){
+    document.body.classList.remove(...themes);
+    current = (current + 1) % themes.length;
+    document.body.classList.add(themes[current]);
+}
+
+function toggleDiagram(el){
+    el.classList.toggle("active");
+}
+
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark");
+}
+</script>
+
+</body>
+</html>
