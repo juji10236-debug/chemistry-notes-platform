@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard - Chemistry Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Arial&display=swap" rel="stylesheet">
+<style>
+:root{
+    --bg:#f4f7ff;
+    --card:#ffffff;
+    --text:#1f2937;
+    --primary:#4f46e5;
+    --secondary:#22c55e;
+    --accent:#06b6d4;
+    --shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+body.dark{
+    --bg:#0b1220;
+    --card:#1e293b;
+    --text:#e5e7eb;
+    --primary:#818cf8;
+    --secondary:#34d399;
+    --accent:#22d3ee;
+    --shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+*{
+    box-sizing:border-box;
+    transition:0.3s ease;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+header{
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:white;
+    padding:30px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    background:var(--card);
+    padding:30px;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+}
+
+h2{
+    color:var(--primary);
+    border-left:6px solid var(--secondary);
+    padding-left:10px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:var(--primary);
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.content-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin:20px 0;
+}
+
+.card{
+    background:linear-gradient(135deg,#eef2ff,#ffffff);
+    padding:20px;
+    border-radius:12px;
+    border-left:5px solid var(--primary);
+}
+
+body.dark .card{
+    background:#111827;
+}
+
+.note-link{
+    display:inline-block;
+    padding:15px 25px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    margin:10px 5px 10px 0;
+    text-align:center;
+}
+
+.note-link:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.user-info{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin:20px 0;
+}
+
+body.dark .user-info{
+    background:#0f172a;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Chemistry Notes Dashboard</h1>
+  <button onclick="logout()">🚪 Logout</button>
+</header>
+
+<div class="container">
+  <h2>Welcome to Your Dashboard</h2>
+  
+  <div id="userInfo" class="user-info">
+    <p>Loading...</p>
+  </div>
+  
+  <h2>📖 Available Content</h2>
+  
+  <div class="content-grid">
+    <div class="card">
+      <h3>📚 Unit 6: Complete Notes</h3>
+      <p>All sections: Alcohols, Ethers, Aldehydes, Ketones, Carboxylic Acids, Esters, Fats & Oils</p>
+      <a href="notes.html" class="note-link">📖 View Notes</a>
+    </div>
+    
+    <div class="card">
+      <h3>❓ Review Questions</h3>
+      <p>15+ practice questions with answers to test your knowledge</p>
+      <a href="notes.html#review" class="note-link">✏️ Practice</a>
+    </div>
+  </div>
+  
+  <h2>✨ Features</h2>
+  <ul>
+    <li>✅ Dark/Light mode themes</li>
+    <li>✅ Interactive expandable sections</li>
+    <li>✅ Complete chemical equations</li>
+    <li>✅ Summary and key points</li>
+    <li>✅ Color-coded content boxes</li>
+    <li>✅ Mobile responsive design</li>
+  </ul>
+</div>
+
+<script>
+async function loadUserInfo() {
+  const token = localStorage.getItem('authToken');
+  
+  if (!token) {
+    window.location.href = 'index.html';
+    return;
+  }
+  
+  try {
+    const response = await fetch('/api/user', {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      document.getElementById('userInfo').innerHTML = `
+        <h3>👤 ${data.username}</h3>
+        <p>Email: ${data.email}</p>
+        <p>Status: ✅ Full Access Granted</p>
+      `;
+    } else {
+      window.location.href = 'index.html';
+    }
+  } catch (error) {
+    console.error('Error loading user:', error);
+    window.location.href = 'index.html';
+  }
+}
+
+function logout() {
+  localStorage.removeItem('authToken');
+  window.location.href = 'index.html';
+}
+
+loadUserInfo();
+</script>
+
+</body>
+</html>
